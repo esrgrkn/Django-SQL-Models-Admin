@@ -1,0 +1,210 @@
+{% extends 'ProjectApp/base.html' %}
+{% load static %}
+{% block css_files %} {% endblock %}
+
+{% block js_files %}  {% endblock  %}
+{% block page_title %}Ürünler{% endblock  %}
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title> Meyveler & Sebzeler </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap' %}" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+{% block  content %}
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="{% static 'images/hero-bg.jpg' %}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="home">
+            <span style="font-size: 30px;">
+              FRUITS
+            </span>
+          </a>
+          <div class="" id="">
+            <div class="container">
+              <div class=" mr-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav justify-content-between ">
+                  <div class="User_option">
+                    <li class="">
+                      <a class="" href="">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <form class="form-inline ">
+                      <button class="btn   nav_search-btn" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </form>
+                  </div>
+                </ul>
+              </div>
+            </div>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="home">Anasayfa</a>
+                <a href="about">Hakkımızda</a>
+                <a href="vegetables">Meyveler & Sebzeler</a>
+                <a href="contact">İletişim</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- veg section -->
+
+  <section class="veg_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Ürünlerimiz
+        </h2>
+        <p>
+          Fruits Export elde ettiği başarıların hepsinde gıda güvenliğini en önde tutarak, müşteri memnuniyeti sağlamak, uluslararası normlar ve kalite yönetim standartlarıyla Global pazarda ülkenin gururu haline gelmek, ihracat payını her geçen gün arttırarak çözüm ortaklarını ve çiftçisini destekleyip, ülkemizin refah seviyesini arttırmak misyonu ile geleceğe adım atmaktadır.
+        </p>
+      </div>
+      <div class="row">
+       
+       {% for product in products %}
+        {% include 'partials/_vegetables.html' %}
+       {% endfor %}
+        
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end veg section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section ">
+    <div class="container">
+      <div class="row ">
+        <div class="col-sm-6 col-md-4 col-lg-3 footer-col">
+          <div class="footer_detail">
+            <a href="about.html">
+              <h4>
+                FRUITS EXPORT
+              </h4>
+            </a>
+            <p>
+              Fruıts Export dünyanın geleceğini düşünür!
+              Üretimde karbon salınımını misyon edindik.
+              AB nin 2050 iklim-nötr programının destekçisiyiz.
+              Çocuklarımızın geleceğini düşünüyoruz!
+              Azotlu gübrelerden optimal seviyede uzaklaşıyoruz.
+            </p>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mx-auto footer-col">
+          <h4>
+            İletişime geç
+          </h4>
+          <p>
+            Ürünleri bahçesinden Satın almak için hemen iletişime geçin.
+          </p>
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Lokasyon
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Telefon : +90 543 904 8001
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : Fruits.export@outlook.com
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_form">
+            <h4>
+              HABER BÜLTENİMİZE KAYDOLUN
+            </h4>
+            <form action="">
+              <input type="text" placeholder="Enter Your Email" />
+              <button type="submit">
+                Abone Ol
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a>Gürkan Eser</a>
+          <a style="width:50px;display:scroll;position:fixed;bottom:100px;position: relative;right: -300px;"href="https://wa.me/905439048001" rel="nofollow" target="_blank" title="WhatsApp"><img style="width: 50px;border-radius: 15px;height:50px;position: relative;left: 335px;"src="{% static 'images/wicon.png' %}" /></a>
+
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- end  footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap' %}"></script>
+{% endblock %}
